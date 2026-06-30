@@ -8,7 +8,7 @@
 void got_packet(u_char *args, const struct pcap_pkthdr *header,
                               const u_char *packet)
 {
-  // Step 0: check weather the packet is TCP
+  // Step 0: check whether the packet is TCP
   struct ethheader *eth = (struct ethheader *)packet;
   struct ipheader * ip = (struct ipheader *) (packet + sizeof(struct ethheader)); 
   struct tcpheader* tcp = (struct tcpheader*) (packet + sizeof(struct ethheader) + ip->iph_ihl * 4);
